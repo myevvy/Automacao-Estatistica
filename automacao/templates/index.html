@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automação de Estatística</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Bem-vindo à Automação de Estatística</h1>
+    <h2>Média, Variância e Amplitude</h2>
+
+    <form method="post">
+      <label for="numeros"
+        >Digite os números separados por vírgula (para números decimais utilize
+        ponto):</label
+      >
+      <input
+        type="text"
+        id="numeros"
+        name="numeros"
+        class="dados"
+        placeholder="Ex: 1,2,3,4,5"
+      />
+      <button type="submit" class="calcular">Calcular</button>
+
+      {% if media is defined and variancia is defined and amplitude is defined%}
+      <h3>Resultados:</h3>
+      <p>Média: {{ media }}</p>
+      <p>Variância: {{ variancia }}</p>
+      <p>Amplitude: {{ amplitude }}</p>
+      {% endif %}
+    </form>
+  </body>
+</html>
