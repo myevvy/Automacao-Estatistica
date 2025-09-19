@@ -2,7 +2,7 @@
 from flask import render_template, request
 from automacao import app
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
 
     numeros = None
@@ -26,4 +26,5 @@ def index():
             except ValueError:
                 return render_template("index.html", quantidade=quantidade, error="Por favor, insira números válidos separados por vírgulas.")
     
+
     return render_template("index.html")
